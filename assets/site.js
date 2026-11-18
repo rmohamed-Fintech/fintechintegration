@@ -10,6 +10,59 @@
     });
   }
 
+  // Engagement inquiry form (Formspree, submitted in place)
+  var form = document.getElementById("intake");
+  if (form) {
+    var status = document.getElementById("intake-status");
+    var button = form.querySelector('button[type="submit"]');
+    function clearErrors() {
+      Array.prototype.forEach.call(form.querySelectorAll(".field-error"), function (e) { e.parentNode.removeChild(e); });
+      Array.prototype.forEach.call(form.querySelectorAll("[aria-invalid]"), function (e) { e.removeAttribute("aria-invalid"); e.removeAttribute("aria-describedby"); });
+    }
+    function showStatus(kind, html) {
+      status.className = "form-status " + kind;
+      status.innerHTML = html;
+      status.focus();
+    }
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      clearErrors();
+      var firstBad = null;
+      Array.prototype.forEach.call(form.querySelectorAll("[required]"), function (el) {
+        var empty = !el.value.trim();
+        var badEmail = el.type === "email" && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail) {
+          var msg = document.createElement("span");
+          msg.className = "field-error";
+          msg.id = el.id + "-error";
+          msg.textContent = badEmail ? "Enter a valid email address." : "This field is required.";
+          el.setAttribute("aria-invalid", "true");
+          el.setAttribute("aria-describedby", msg.id);
+          el.parentNode.appendChild(msg);
+          if (!firstBad) firstBad = el;
+        }
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      button.disabled = true;
+      button.textContent = "Sending...";
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            showStatus("ok", "<strong>Thank you. Your inquiry was sent.</strong> I&#8217;ll reply within two business days.");
+          } else {
+            throw new Error("send failed");
+          }
+        })
+        .catch(function () {
+          showStatus("err", "<strong>Your inquiry didn&#8217;t send.</strong> Please try again, or email <a href=\"mailto:rmohamed@fintechintegration.com\">rmohamed@fintechintegration.com</a> directly.");
+        })
+        .then(function () { button.disabled = false; button.textContent = "Send inquiry"; });
+    });
+  }
+
   // Copy email address buttons
   Array.prototype.forEach.call(document.querySelectorAll("[data-copy]"), function (btn) {
     btn.addEventListener("click", function () {

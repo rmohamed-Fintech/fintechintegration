@@ -90,36 +90,93 @@
     <div class="wrap">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav>
       <h1>Start a conversation</h1>
-      <p class="lede">Email is the fastest way to reach me. A few lines are enough to tell whether I can help.</p>
+      <p class="lede">Tell me a little about your company and what&#8217;s prompting the conversation. It takes about three minutes, and I reply personally within two business days.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap split-wide">
+    <div class="wrap intake-layout">
       <div>
-        <h2 style="margin-bottom: 20px;">What to include</h2>
+        <h2 style="margin-bottom: 8px;">Engagement inquiry</h2>
+        <p style="color: var(--muted); font-size: 1rem; margin-bottom: 28px;">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+        <form class="intake" id="intake" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New engagement inquiry from fintechintegration.com">
+          <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+          <fieldset>
+            <legend>About you</legend>
+            <div class="field-row">
+              <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="f-title">Title</label><input id="f-title" name="title" type="text" autocomplete="organization-title"></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>About your company</legend>
+            <div class="field-row">
+              <div class="field"><label for="f-company">Company *</label><input id="f-company" name="company" type="text" autocomplete="organization" required></div>
+              <div class="field"><label for="f-industry">Industry</label><select id="f-industry" name="industry"><option value="" disabled selected>Select one</option><option>Multi-unit retail or restaurants</option><option>Franchise system</option><option>Logistics or distribution</option><option>Consumer products or manufacturing</option><option>Healthcare or insurance</option><option>Professional services</option><option>Other</option></select></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="f-revenue">Annual revenue</label><select id="f-revenue" name="revenue"><option value="" disabled selected>Select one</option><option>Under $10M</option><option>$10M to $50M</option><option>$50M to $250M</option><option>Over $250M</option><option>Prefer not to say</option></select></div>
+              <div class="field"><label for="f-locations">Locations, entities, or business units</label><select id="f-locations" name="locations"><option value="" disabled selected>Select one</option><option>1</option><option>2 to 10</option><option>11 to 50</option><option>More than 50</option></select></div>
+            </div>
+            <div class="field"><label for="f-ownership">Ownership</label><select id="f-ownership" name="ownership"><option value="" disabled selected>Select one</option><option>Owner-led or family</option><option>Private equity-backed</option><option>Venture-backed</option><option>Public</option><option>Other</option></select></div>
+            <div class="field"><label for="f-systems">Current systems</label><input id="f-systems" name="systems" type="text" placeholder="For example: QuickBooks, NetSuite, Toast, ADP"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>What you need</legend>
+            <div class="field">
+              <span class="label-text" id="help-label">Where do you need help? Select all that apply.</span>
+              <div class="check-grid" role="group" aria-labelledby="help-label">
+            <label class="check"><input type="checkbox" name="help_with" value="Financial systems or ERP"><span>Financial systems or ERP</span></label>
+            <label class="check"><input type="checkbox" name="help_with" value="Strategy and growth planning"><span>Strategy and growth planning</span></label>
+            <label class="check"><input type="checkbox" name="help_with" value="Profitability and EBITDA"><span>Profitability and EBITDA</span></label>
+            <label class="check"><input type="checkbox" name="help_with" value="Fractional finance leadership"><span>Fractional finance leadership</span></label>
+            <label class="check"><input type="checkbox" name="help_with" value="Acquisition integration"><span>Acquisition integration</span></label>
+            <label class="check"><input type="checkbox" name="help_with" value="Not sure yet"><span>Not sure yet</span></label>
+              </div>
+            </div>
+            <div class="field"><label for="f-situation">What&#8217;s prompting this conversation now? *</label><textarea id="f-situation" name="situation" rows="5" required placeholder="The decision you&#8217;re facing, what isn&#8217;t working, or the number that worries you."></textarea></div>
+            <div class="field-row">
+              <div class="field"><label for="f-timing">When do you want to start?</label><select id="f-timing" name="timing"><option value="" disabled selected>Select one</option><option>Within 30 days</option><option>In 1 to 3 months</option><option>In 3 to 6 months</option><option>Just exploring</option></select></div>
+              <div class="field"><label for="f-source">How did you hear about us?</label><select id="f-source" name="source"><option value="" disabled selected>Select one</option><option>Referral</option><option>LinkedIn</option><option>Google search</option><option>Google ad</option><option>Event</option><option>Other</option></select></div>
+            </div>
+          </fieldset>
+
+          <p class="form-note">Please don&#8217;t include account numbers, passwords, or other highly sensitive data. See the <a href="/privacy/">privacy policy</a> for how your information is handled.</p>
+          <button class="button solid" type="submit">Send inquiry</button>
+          <div class="form-status" id="intake-status" role="status" aria-live="polite" tabindex="-1"></div>
+        </form>
+      </div>
+
+      <aside>
+        <h2 style="margin-bottom: 20px; font-size: 1.6rem;">What happens next</h2>
         <ul class="rule-list">
-          <li>Your company and what it does</li>
-          <li>Revenue, and how many locations, entities, or product lines you manage</li>
-          <li>Your current ERP, POS, and accounting systems</li>
-          <li>The decision you&#8217;re facing, or the number that worries you</li>
+          <li><strong>I read it myself</strong> and reply within two business days.</li>
+          <li><strong>A 30-minute call</strong> to understand the situation. No charge.</li>
+          <li><strong>A short proposal</strong> if there&#8217;s a fit, usually starting with a fixed-fee diagnostic.</li>
         </ul>
-        <p style="color: var(--body); margin-top: 24px;">I read every message myself. If I&#8217;m not the right fit, I&#8217;ll say so and point you somewhere better if I can.</p>
-        <h2 style="margin: 40px 0 16px; font-size: 1.5rem;">Send an email</h2>
+        <p style="color: var(--body); margin-top: 20px;">If I&#8217;m not the right fit, I&#8217;ll say so and point you somewhere better if I can.</p>
+        <h2 style="margin: 40px 0 16px; font-size: 1.3rem;">Prefer email?</h2>
         <div class="actions">
           <a class="button solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmohamed@fintechintegration.com&amp;su=Advisory%20inquiry&amp;body=Company%3A%0D%0ARevenue%20and%20number%20of%20locations%20or%20entities%3A%0D%0ASystems%20(ERP%2C%20POS%2C%20accounting)%3A%0D%0AThe%20decision%20or%20number%20that%20worries%20you%3A%0D%0A" target="_blank" rel="noopener">Open in Gmail</a>
           <a class="button solid" href="https://outlook.office.com/mail/deeplink/compose?to=rmohamed@fintechintegration.com&amp;subject=Advisory%20inquiry&amp;body=Company%3A%0D%0ARevenue%20and%20number%20of%20locations%20or%20entities%3A%0D%0ASystems%20(ERP%2C%20POS%2C%20accounting)%3A%0D%0AThe%20decision%20or%20number%20that%20worries%20you%3A%0D%0A" target="_blank" rel="noopener">Open in Outlook</a>
           <a class="button outline" href="mailto:rmohamed@fintechintegration.com?subject=Advisory%20inquiry&amp;body=Company%3A%0D%0ARevenue%20and%20number%20of%20locations%20or%20entities%3A%0D%0ASystems%20(ERP%2C%20POS%2C%20accounting)%3A%0D%0AThe%20decision%20or%20number%20that%20worries%20you%3A%0D%0A">Use my email app</a>
         </div>
-        <p style="color: var(--muted); font-size: 1rem; margin-top: 16px;">Or copy the address into any email account: <strong style="color: var(--ink);">rmohamed@fintechintegration.com</strong></p>
-      </div>
-      <div>
+        <div style="margin-top: 28px;">
         <div class="panel">
           <div><strong>Email</strong><span><span class="copy-row"><a href="mailto:rmohamed@fintechintegration.com">rmohamed@fintechintegration.com</a><button class="copy-btn" type="button" data-copy="rmohamed@fintechintegration.com">Copy</button></span><span class="copy-status" role="status" aria-live="polite"></span></span></div>
           <div><strong>LinkedIn</strong><span><a href="https://www.linkedin.com/in/rafat-mohamed/" rel="me">Rafat Mohamed</a></span></div>
           <div><strong>Location</strong><span>Metro Detroit, working with clients across the U.S.</span></div>
         </div>
-      </div>
+        </div>
+      </aside>
     </div>
   </section>
 </main>
