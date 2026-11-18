@@ -88,7 +88,16 @@ p { margin: 0 0 1em; }
 .button.ghost:hover { background: var(--navy-2); color: #fff; }
 .button.solid { background: var(--navy); border-color: var(--navy); color: #fff; }
 .button.solid:hover { background: var(--navy-2); color: #fff; }
+.button.outline { background: #fff; color: var(--navy); border-color: var(--navy); }
+.button.outline:hover { background: var(--mist); color: var(--navy); }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* Copy email */
+.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.copy-row a { word-break: break-all; }
+.copy-btn { font-family: var(--head); font-weight: 700; font-size: 0.9rem; color: var(--navy); background: #fff; border: 2px solid var(--navy); border-radius: 4px; padding: 8px 14px; min-height: 40px; cursor: pointer; }
+.copy-btn:hover { background: var(--navy); color: #fff; }
+.copy-status { display: block; font-size: 0.95rem; color: var(--spruce); margin-top: 6px; min-height: 1.4em; }
 
 /* Hero */
 .hero .wrap { padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(64px, 9vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 64px; align-items: center; }
