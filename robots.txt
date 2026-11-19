@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Plain-language summary of this site for AI assistants
+# https://fintechintegration.com/llms.txt
+
 Sitemap: https://fintechintegration.com/sitemap.xml
