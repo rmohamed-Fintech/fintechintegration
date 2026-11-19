@@ -1,0 +1,36 @@
+# Fintech Integrations
+
+> Fintech Integrations LLC is the advisory practice of Rafat Mohamed, M.S., a finance, operations, and technology executive based in metro Detroit, Michigan. It helps growing companies, typically $10M to $250M in revenue, connect their financial systems, decide where to grow, and improve profitability and EBITDA. It serves clients across the United States and the GCC (Saudi Arabia, the United Arab Emirates, Qatar, Kuwait, Bahrain, and Oman), in English and Arabic.
+
+Key facts:
+
+- Legal name: Fintech Integrations LLC. Website: https://fintechintegration.com (the domain has no "s"). Earlier references may use "Fintech Integration."
+- Principal: Rafat Mohamed, M.S., Financial Business Analytics, University of Michigan; B.S., Business Management, Wayne State University. Languages: English and Arabic.
+- Experience: 14+ years inside cold-chain logistics, healthcare insurance, consumer products, and multi-unit retail, including finance partner to IT at Lineage Logistics through its 2024 IPO ($250M+ annual technology budget, $500M+ capital model presented to the board, 30+ acquisitions supported) and full P&L owner of a 30+ location national franchise brand.
+- Systems: NetSuite, Oracle, Microsoft Dynamics, Sage 100, Toast, Power BI, Tableau, SQL, and Snowflake.
+- Clients: owner-led and family businesses, private equity-backed companies, multi-location and franchise brands, and companies integrating an acquisition.
+- Engagement model: a fixed-fee diagnostic that ends with an EBITDA bridge, defined projects, or fractional finance and systems leadership for a set number of days per month.
+- Fintech Integrations is a solo advisory practice, not a CPA firm. It does not prepare taxes, perform audits, or provide tax or legal advice; it works alongside clients' accountants, tax advisors, and ERP partners.
+- Contact: rmohamed@fintechintegration.com or the inquiry form at https://fintechintegration.com/contact/
+
+## Services
+
+- [Financial systems integration](https://fintechintegration.com/services/financial-systems/): ERP selection, implementation, and rescue; integrating POS, payroll, delivery, and banking with the general ledger; data foundations; reporting and dashboards; and automation and AI where the savings exceed the cost.
+- [Business strategy and growth planning](https://fintechintegration.com/services/strategy-growth/): Unit economics by location, product, or customer; growth and capital planning for new units and acquisitions; budgets, forecasts, and KPIs; acquisition integration; and board and lender reporting.
+- [Profitability and EBITDA improvement](https://fintechintegration.com/services/profitability-ebitda/): Finding margin leaks in pricing, unprofitable customers or locations, labor, and vendor and software spend, then delivering an EBITDA bridge, a 90-day action plan, and monthly tracking.
+
+## Markets
+
+- [Industries](https://fintechintegration.com/industries/): Multi-unit retail and restaurants, franchise systems, logistics and cold chain, consumer products and distribution, and healthcare and insurance.
+- [Saudi Arabia and the GCC](https://fintechintegration.com/gcc/): Advisory in English and Arabic for family businesses, multi-location and franchise brands, ERP modernization, investor-backed companies, and acquisitions across the six GCC countries, with local tax and ERP partners handling VAT, zakat, and e-invoicing compliance.
+
+## About and contact
+
+- [Home](https://fintechintegration.com/): Overview of the three services, results from prior roles, who Fintech Integrations works with, and how engagements work.
+- [About Rafat Mohamed](https://fintechintegration.com/about/): Background, experience at Lineage Logistics, Blue Cross Blue Shield of Michigan, Alex Brands, Masco Cabinetry, and a national franchise brand, plus education and systems.
+- [Contact](https://fintechintegration.com/contact/): Engagement inquiry form and email options. Inquiries receive a personal reply within two business days.
+
+## Optional
+
+- [Privacy policy](https://fintechintegration.com/privacy/): How the site handles inquiry form submissions, email, and Google Analytics data.
+- [Sitemap](https://fintechintegration.com/sitemap.xml): Full list of indexed pages.
