@@ -202,6 +202,10 @@ p { margin: 0 0 1em; }
 .industry p { color: var(--body); margin: 0 0 12px; }
 @media (max-width: 760px) { .industry { grid-template-columns: 1fr; } }
 
+/* Booking box */
+.book-box { background: var(--navy); color: #fff; border-radius: 6px; padding: 28px; }
+.book-box p { color: var(--on-navy-2); }
+
 /* Intake form */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .intake-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 72px; align-items: start; }
