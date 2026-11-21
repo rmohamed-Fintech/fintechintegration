@@ -24,6 +24,10 @@ Key facts:
 - [Industries](https://fintechintegration.com/industries/): Multi-unit retail and restaurants, franchise systems, logistics and cold chain, consumer products and distribution, and healthcare and insurance.
 - [Saudi Arabia and the GCC](https://fintechintegration.com/gcc/): Advisory in English and Arabic for family businesses, multi-location and franchise brands, ERP modernization, investor-backed companies, and acquisitions across the six GCC countries, with local tax and ERP partners handling VAT, zakat, and e-invoicing compliance.
 
+## Resources
+
+- [The EBITDA Leak Checklist](https://fintechintegration.com/ebitda-leak-checklist/): Free 8-page PDF covering 12 places growing companies lose margin across pricing, cost of delivery, overhead, and finance systems, with a quick test for each, a scoring guide, and a worksheet. Available after entering a name and work email.
+
 ## About and contact
 
 - [Home](https://fintechintegration.com/): Overview of the three services, results from prior roles, who Fintech Integrations works with, and how engagements work.

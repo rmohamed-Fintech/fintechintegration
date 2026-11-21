@@ -29,6 +29,10 @@
     var where = a.getAttribute("data-track") || location.pathname;
     if (href.indexOf("calendar.app.google") !== -1) {
       track("book_call_click", { link_location: where });
+    } else if (href.indexOf("/downloads/") !== -1 && href.slice(-4) === ".pdf") {
+      track("file_download_click", { file_name: href.split("/").pop(), link_location: where });
+    } else if (href.indexOf("/ebitda-leak-checklist/") !== -1) {
+      track("checklist_cta_click", { link_location: where });
     } else if (href.indexOf("mailto:") === 0) {
       track("email_click", { email_method: "mail_app", link_location: location.pathname });
     } else if (href.indexOf("mail.google.com/mail") !== -1) {
@@ -101,6 +105,60 @@
           showStatus("err", "<strong>Your inquiry didn&#8217;t send.</strong> Please try again, email <a href=\"mailto:rmohamed@fintechintegration.com\">rmohamed@fintechintegration.com</a>, or <a href=\"" + BOOKING_URL + "\" target=\"_blank\" rel=\"noopener\" data-track=\"form_error\">book a call</a>.");
         })
         .then(function () { button.disabled = false; button.textContent = "Send inquiry"; });
+    });
+  }
+
+  // Checklist download form (Formspree, then reveal the download)
+  var cform = document.getElementById("checklist-form");
+  if (cform) {
+    var cstatus = document.getElementById("checklist-status");
+    var csuccess = document.getElementById("checklist-success");
+    var cbutton = cform.querySelector('button[type="submit"]');
+    var cstarted = false;
+    cform.addEventListener("input", function () {
+      if (!cstarted) { cstarted = true; track("form_start", { form_id: "checklist" }); }
+    });
+    cform.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      Array.prototype.forEach.call(cform.querySelectorAll(".field-error"), function (e) { e.parentNode.removeChild(e); });
+      Array.prototype.forEach.call(cform.querySelectorAll("[aria-invalid]"), function (e) { e.removeAttribute("aria-invalid"); e.removeAttribute("aria-describedby"); });
+      var firstBad = null;
+      Array.prototype.forEach.call(cform.querySelectorAll("[required]"), function (el) {
+        var empty = !el.value.trim();
+        var badEmail = el.type === "email" && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (empty || badEmail) {
+          var msg = document.createElement("span");
+          msg.className = "field-error";
+          msg.id = el.id + "-error";
+          msg.textContent = badEmail ? "Enter a valid email address." : "This field is required.";
+          el.setAttribute("aria-invalid", "true");
+          el.setAttribute("aria-describedby", msg.id);
+          el.parentNode.appendChild(msg);
+          if (!firstBad) firstBad = el;
+        }
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      var role = cform.querySelector('[name="role"]');
+      var optIn = cform.querySelector('[name="updates_opt_in"]');
+      var info = { form_id: "checklist", role: role && role.value ? role.value : "(not provided)", opted_in: optIn && optIn.checked ? "yes" : "no" };
+      cbutton.disabled = true;
+      cbutton.textContent = "Sending...";
+      fetch(cform.action, { method: "POST", body: new FormData(cform), headers: { Accept: "application/json" } })
+        .then(function (r) { if (!r.ok) throw new Error("send failed"); })
+        .then(function () {
+          track("checklist_signup", info);
+          cform.hidden = true;
+          csuccess.hidden = false;
+          csuccess.focus();
+        })
+        .catch(function () {
+          cbutton.disabled = false;
+          cbutton.textContent = "Get the checklist";
+          cstatus.className = "form-status err";
+          cstatus.innerHTML = "<strong>That didn&#8217;t go through.</strong> Please try again in a moment.";
+          cstatus.focus();
+        });
     });
   }
 
